@@ -16,6 +16,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.epam.szte.bdd.dao.Product;
 import com.epam.szte.bdd.utils.PageObject;
 
+import static org.junit.Assert.assertTrue;
+
 public class ShoppingCartPage extends PageObject {
 
 	private WebDriver driver;
@@ -44,6 +46,9 @@ public class ShoppingCartPage extends PageObject {
 
 	@FindBy(css="#center_column > p")
 	private WebElement alertText;
+
+	@FindBy(id="total_price")
+	private WebElement totalPriceText;
 	
 	public boolean shoppingCartIsDisplayed() {
 		return shoppingCartTitle.isDisplayed();
@@ -70,7 +75,7 @@ public class ShoppingCartPage extends PageObject {
 		sizes.selectByVisibleText(size);
 	}
 	public void assertShirtSize(String size){
-		Assert.assertTrue(shirtSize.getText().contains(size));
+		assertTrue(shirtSize.getText().contains(size));
 	}
 
 	public void clickDeleteButton() {
@@ -79,6 +84,10 @@ public class ShoppingCartPage extends PageObject {
 
 	public void assertEmptyCart() {
 		(new WebDriverWait(driver, 10)).until(ExpectedConditions.visibilityOf(alertText));
-		Assert.assertTrue(alertText.getText().contains("Your shopping cart is empty."));
+		assertTrue(alertText.getText().contains("Your shopping cart is empty."));
+	}
+
+	public void assertTotalValue(){
+		assertTrue ("Helytelen ár", totalPriceText.getText().contains("$83.00"));
 	}
 }

@@ -16,6 +16,7 @@ import com.epam.szte.bdd.dao.Product;
 import com.epam.szte.bdd.hooks.Hooks;
 import com.epam.szte.bdd.pages.ShoppingCartPage;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.datatable.DataTable;
@@ -67,6 +68,11 @@ public class ShoppingCartStep {
 	@Then("I can see the cart is empty")
 	public void iCanSeeTheCartIsEmpty() {
 		shoppingCartPage.assertEmptyCart();
+	}
+
+	@And("I see the total value")
+	public void iSeeTheTotalValue() {
+		shoppingCartPage.assertTotalValue();
 	}
 
 	/**

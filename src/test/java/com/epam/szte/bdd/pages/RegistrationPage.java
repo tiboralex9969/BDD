@@ -92,42 +92,42 @@ public class RegistrationPage extends PageObject {
 
     public boolean validateCustomerFirstName(String firstName) {
         Hooks.driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
-        return customerFirstName.getText().contains(firstName);
+        return customerFirstName.getAttribute("value").contains(firstName);
     }
 
     public boolean validateCustomerLastName(String lastName) {
-        return customerLastName.getText().contains(lastName);
+        return customerLastName.getAttribute("value").contains(lastName);
     }
 
     public boolean validatePassword(String password) {
-        return passwordField.getText().contains(password);
+        return passwordField.getAttribute("value").contains(password);
     }
 
     public boolean validateFirstName(String firstName) {
-        return firstNameField.getText().contains(firstName);
+        return firstNameField.getAttribute("value").contains(firstName);
     }
 
     public boolean validateLastName(String lastName) {
-        return lastNameField.getText().contains(lastName);
+        return lastNameField.getAttribute("value").contains(lastName);
     }
 
     public boolean validateAddress(String address) {
-        return addressField.getText().contains(address);
+        return addressField.getAttribute("value").contains(address);
     }
 
     public boolean validateCity(String city) {
-        return cityField.getText().contains(city);
+        return cityField.getAttribute("value").contains(city);
     }
 
     public boolean validateState(String state) {
-        return stateSelect.getText().contains(state);
+        return stateSelect.getAttribute("value").contains(state);
     }
 
     public boolean validateZipCode(String zipCode) {
-        return zipCodeField.getText().contains(zipCode);
+        return zipCodeField.getAttribute("value").contains(zipCode);
     }
 
     public boolean validateMobilePhone(String mobilePhone) {
-        return mobileField.getText().contains(mobilePhone);
+        return mobileField.getAttribute("value").contains(mobilePhone);
     }
 }

@@ -9,22 +9,22 @@ Feature: Create account
     And click on Create Account button
     Then I redirect to the registration page
     When I type in customerFirstName
-    #Then Tibor is filled in
+    Then Tibor is filled in
     And I type in customerLastName
-    #Then Szekeres is filled in
+    Then Szekeres is filled in
     And I type in password
-    #Then password is filled in
+    Then password is filled in
     And I type in firstName
-    #Then Tibor is filled in to firstName
+    Then Tibor is filled in to firstName
     And I type in lastName
-    #Then Szekeres is filled in to lastName
+    Then Szekeres is filled in to lastName
     And I type in address
-    #Then the address is filled in
+    Then the address is filled in
     And I type in City
-    #Then City is filled in
+    Then City is filled in
     And I choose from State
-    #Then State is filled in
+    Then State is filled in
     And I type in Zip Code
-    #Then Zip Code is filled in
+    Then Zip Code is filled in
     And I type in Mobile phone
-    #Then Mobile phone is filled in
+    Then Mobile phone is filled in

@@ -29,9 +29,7 @@ Feature: Delete Items
     When I click on Add to cart button
     And I click on Proceed To Checkout
     Then I see the shopping cart page
-    And I see the added items
-      | Description | Unit price | Qty | Total  |
-      | Blouse      | $27.00     | 3   | $81.00 |
+    And I see the total value
 		
 		
 
